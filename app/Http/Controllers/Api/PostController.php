@@ -75,7 +75,7 @@ class PostController extends Controller
         if ($request->hasFile('cover_image')) {
             $newImage = $request->file('cover_image');
             $newFileName = $post->id . rand(0, 999) . auth()->user()->id . $newImage->getClientOriginalName();
-            $newPath = $newImage->storeAs('/posts', $newFileName);
+            $newPath = $newImage->storeAs('/posts', $newFileName, 'public');
             $post->cover_image = $newPath;
             $post->save();
         }
