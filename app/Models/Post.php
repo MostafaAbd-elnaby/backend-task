@@ -30,6 +30,6 @@ class Post extends Model
 
     public function getCoverImageAttribute($value)
     {
-        return asset('storage/app/public/'.$value);
+        return asset('storage/'.$value);
     }
 }

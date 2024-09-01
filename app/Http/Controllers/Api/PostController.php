@@ -42,7 +42,7 @@ class PostController extends Controller
         if ($request->hasFile('cover_image')) {
             $newImage = $request->file('cover_image');
             $newFileName = rand(0, 999) . auth()->user()->id. $newImage->getClientOriginalName();
-            $newPath = $newImage->storeAs('/posts', $newFileName);
+            $newPath = $newImage->storeAs('/posts', $newFileName, 'public');
         }
         $post = Post::create([
             'title' => $request->title,
@@ -97,9 +97,7 @@ class PostController extends Controller
 
     public function getDeletedPosts()
     {
-        $user = auth()->user();
-        $deletedPosts = $user->posts()->onlyTrashed()->get();
-
+        $deletedPosts = Post::onlyTrashed()->where('user_id', auth()->user()->id)->get();
         return response()->json([
             'deleted_posts' => PostResource::collection($deletedPosts ?? []),
         ]);

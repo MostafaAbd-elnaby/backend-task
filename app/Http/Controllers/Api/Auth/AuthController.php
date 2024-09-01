@@ -96,6 +96,6 @@ class AuthController extends Controller
         $user->is_verified = true;
         $user->save();
     
-        return response()->json(['message' => 'User verified successfully']);
+        return response()->json(['message' => 'User verified successfully', 'user' => $user]);
     }
 }

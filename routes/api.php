@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\StatsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,4 +39,5 @@ Route::middleware(['auth:sanctum', 'isVerified'])->group( function () {
         Route::put('update/{post}', 'update');
         Route::get('/restore/{post_id}', 'restoreDeletedPost');
     });
+    Route::get('/stats', [StatsController::class, 'index']);
 });

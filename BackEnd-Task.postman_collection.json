@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "b86c316d-edac-4733-aeb6-8e11ef475cee",
+		"name": "BackEnd-Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29027564",
+		"_collection_link": "https://orange-shadow-786661.postman.co/workspace/FreeLance~2c2973dc-702d-40a2-9748-da49fc5d9cc4/collection/29027564-b86c316d-edac-4733-aeb6-8e11ef475cee?action=share&source=collection_link&creator=29027564"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "1152894077",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_api}}login",
+							"host": [
+								"{{local_api}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "1152894077",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "688892",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_api}}verify",
+							"host": [
+								"{{local_api}}verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mostafat",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1152894078",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_api}}register",
+							"host": [
+								"{{local_api}}register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogOut",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_api}}logout",
+							"host": [
+								"{{local_api}}logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "Add Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "z",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_api}}tags/store/",
+							"host": [
+								"{{local_api}}tags"
+							],
+							"path": [
+								"store",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tag",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"vvvv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_api}}tags/update/1",
+							"host": [
+								"{{local_api}}tags"
+							],
+							"path": [
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_api}}tags/",
+							"host": [
+								"{{local_api}}tags"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_api}}tags/1",
+							"host": [
+								"{{local_api}}tags"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tag",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_api}}tags/3",
+							"host": [
+								"{{local_api}}tags"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "All User Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_api}}posts/",
+							"host": [
+								"{{local_api}}posts"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "iiii",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "iiii body",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "/D:/Courses/VUE.JS/E-Commerce with Vue/assets/images/discount.png"
+								},
+								{
+									"key": "pinned",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tags[]",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "tags[]",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_api}}posts/store",
+							"host": [
+								"{{local_api}}posts"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"zzx\",\r\n    \"body\":\"z\",\r\n    \"pinned\":false,\r\n    \"tags\": [6,7]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_api}}posts/update/15",
+							"host": [
+								"{{local_api}}posts"
+							],
+							"path": [
+								"update",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_api}}posts/18",
+							"host": [
+								"{{local_api}}posts"
+							],
+							"path": [
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single User's Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_api}}posts/15",
+							"host": [
+								"{{local_api}}posts"
+							],
+							"path": [
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deleted Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_api}}posts/deleted",
+							"host": [
+								"{{local_api}}posts"
+							],
+							"path": [
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_api}}posts/restore/15",
+							"host": [
+								"{{local_api}}posts"
+							],
+							"path": [
+								"restore",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_api}}stats/",
+					"host": [
+						"{{local_api}}stats"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "7|FBtg5YzoWeXQOQAWPCjDyGmagxuxWKWOqktA3U3H4f4f4483",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_api",
+			"value": "127.0.0.1:8000/api/",
+			"type": "string"
+		}
+	]
+}
